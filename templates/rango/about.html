@@ -2,17 +2,17 @@
 {% load staticfiles %}
 <html>
 <head>
-<title>Rango</title>
+<title>About Rango</title>
 </head>
 <body>
-<h1>Rango says...</h1>
+<h1>About page of rango media check.</h1>
 <div>
 hey there partner! <br />
-<strong>{{ boldmessage }}</strong><br />
-<strong>{{ hell }}</strong><br />
+<strong>{{ Intro }}</strong><br />
 </div>
 <div>
 <a href="/rango/about/">About</a><br />
+<img src="{{ MEDIA_URL}}images/pika.png" alt="Picture of Pika" />
 <img src="{% static "images/dorie.jpeg" %}" alt="Picture of Dora" />
 </div>
 </body>
