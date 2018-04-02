@@ -23,19 +23,19 @@ def about(request):
 
 def show_category(request, category_name_slug):
 	context_dict = {}
-	#try:
+	try:
 
-	cat = category.objects.get(slug = category_name_slug)#throws exception if category not found.
-	pag = page.objects.filter(category = cat)#returns empty list not found any pages. 
+		cat = category.objects.get(slug = category_name_slug)#throws exception if category not found.
+		pag = page.objects.filter(category = cat)#returns empty list not found any pages. 
 
-	context_dict['category']=cat
-	context_dict['pages'] = pag
+		context_dict['category']=cat
+		context_dict['pages'] = pag
 
-	'''except:
+	except:
 
 		context_dict['category']=None
 		context_dict['pages'] = None
-'''
+
 	return render(request, 'rango/category.html', context = context_dict)
 
 def add_category(request):

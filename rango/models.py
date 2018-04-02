@@ -9,7 +9,7 @@ class category(models.Model):
 	views = models.IntegerField(default=0)
 	slug = models.SlugField(unique= True)
 
-	#overriding save method 
+	#overriding save method to store the slugged version of category.
 	def save(self, *args, **kwargs):
 		self.slug = slugify(self.name)
 		super(category, self).save(*args, **kwargs)
