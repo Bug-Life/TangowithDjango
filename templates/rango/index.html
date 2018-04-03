@@ -4,11 +4,17 @@
 {% block title_block%}
 	How to Tango with Django!
 {% endblock %}
-	
+
+
 
 {% block body_block%}
 
 	<h1>Home Page Of Rango-Tango with Django.</h1>
+	{% if user.is_authenticated %}
+		<h1> {{ user.username }} </h1>
+	{% else %}
+		Hey there partner!
+	{% endif %}
 	{% if categories %}
 		<ul>
 		{% for category in categories %}
